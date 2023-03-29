@@ -1,0 +1,33 @@
+﻿<Window x:Class="Diary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="350" MinWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DatePicker Name="Data" Grid.ColumnSpan="3" Margin="10 10 10 0" SelectedDateChanged="dpDataObject_SelectedDateChanged"/>
+        <ListBox x:Name="ListboxXML" SelectionChanged="lbNameObjects_SelectionChanged" Grid.Row="1" Grid.Column="0" Margin="10 0 0 0"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label Content="Наименование:" HorizontalAlignment="Center"/>
+            <TextBox Name="Txtbox" Margin="0 0 10 0"/>
+            <Label Content="Описание:" HorizontalAlignment="Center"/>
+            <TextBox Name="Txtbox2" Margin="0 0 10 0"/>
+        </StackPanel>
+        <Button x:Name="Dell" Click="btDeleteObject_Click" Margin="10 0 0 10" Content="Удалить" Grid.Row="2" Grid.Column="0"/>
+        <Button x:Name="Create" Click="tbCreateObject_Click" Margin="0 0 0 10" Content="Создать" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="Save" Click="btSaveObject_Click" Margin="0 0 10 10" Content="Сохранить" Grid.Row="2" Grid.Column="2"/>
+    </Grid>
+</Window>
